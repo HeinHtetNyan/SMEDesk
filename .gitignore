@@ -1,0 +1,24 @@
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Python / backend
+backend/venv/
+backend/__pycache__/
+**/__pycache__/
+*.pyc
+backend/.env
+
+# Tauri build output (the native android/ project itself is tracked; see mobile/android/.gitignore)
+desktop/src-tauri/target/
+
+# Env files
+.env
+.env.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SMEDesk</string>
+    <string name="title_activity_main">SMEDesk</string>
+    <string name="package_name">com.smedesk.app</string>
+    <string name="custom_url_scheme">com.smedesk.app</string>
+</resources>
