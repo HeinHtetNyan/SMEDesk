@@ -1,4 +1,4 @@
-package com.getcapacitor.myapp;
+package com.smedesk.app;
 
 import static org.junit.Assert.*;
 

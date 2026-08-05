@@ -9,6 +9,7 @@ backend/__pycache__/
 **/__pycache__/
 *.pyc
 backend/.env
+backend/.pytest_cache/
 
 # Tauri build output (the native android/ project itself is tracked; see mobile/android/.gitignore)
 desktop/src-tauri/target/

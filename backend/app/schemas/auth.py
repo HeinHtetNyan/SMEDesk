@@ -1,20 +1,23 @@
 import uuid
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 
 from app.models.user import UserRole
+
+# bcrypt silently ignores/truncates input past 72 bytes, so the cap must be enforced here.
+PASSWORD_MAX_LENGTH = 72
 
 
 class BusinessSignup(BaseModel):
     business_name: str
     owner_email: EmailStr
-    owner_password: str
+    owner_password: str = Field(min_length=8, max_length=PASSWORD_MAX_LENGTH)
     owner_full_name: str
 
 
 class LoginRequest(BaseModel):
     email: EmailStr
-    password: str
+    password: str = Field(min_length=1, max_length=PASSWORD_MAX_LENGTH)
 
 
 class Token(BaseModel):

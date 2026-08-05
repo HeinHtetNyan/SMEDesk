@@ -75,4 +75,9 @@ npm run android:open  # opens the project in Android Studio to run/build
 
 ## Status
 
-Early scaffolding: auth (signup/login/me) and the `Business`/`User` tables are in place. Domain models (customers, suppliers, sales, purchases, production, cash) and the PowerSync sync layer are not built yet — see the requirements doc for the full feature list.
+Early scaffolding: auth (signup/login/me) and the `Business`/`User` tables are in place, with the initial Alembic migration and a passing pytest suite (`backend/tests/`) covering the auth flow end-to-end against Postgres. Domain models (customers, suppliers, sales, purchases, production, cash) and the PowerSync sync layer are not built yet — see the requirements doc for the full feature list.
+
+### Known environment requirements
+
+- Backend needs Postgres reachable at `DATABASE_URL` (see `.env.example`) before `alembic upgrade head` or the API will work.
+- Mobile (`@capacitor/android` 8.5) requires **JDK 21** to build — a JDK 17-only machine fails `./gradlew assembleDebug` with `invalid source release: 21`.
