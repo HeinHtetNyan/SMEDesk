@@ -40,10 +40,9 @@ cp .env.example .env             # then fill in DATABASE_URL / JWT_SECRET
 uvicorn app.main:app --reload
 ```
 
-Requires a running PostgreSQL instance matching `DATABASE_URL` in `.env`. Once the DB is up:
+Requires a running PostgreSQL instance matching `DATABASE_URL` in `.env`. Once the DB is up, apply the existing migrations (the initial schema migration is already committed under `backend/alembic/versions/` — don't autogenerate a new one for a fresh setup):
 
 ```bash
-alembic revision --autogenerate -m "initial schema"
 alembic upgrade head
 ```
 

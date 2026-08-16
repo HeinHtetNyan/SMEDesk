@@ -18,6 +18,11 @@ desktop/src-tauri/target/
 .env
 .env.local
 
+# Secrets / signing material
+*.pem
+*.p12
+*.key
+
 # OS / editor
 .DS_Store
 Thumbs.db
